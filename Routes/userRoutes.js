@@ -4,21 +4,21 @@ import { handleCreateUser, handleDeleteUser, handleGetOneUser, handleGetUsers, h
 const router = express.Router();
 
 // Get all Users
-router.get("/", handleGetUsers);
+router.get("/users", handleGetUsers);
 
 // Get Specific User by Id
-router.get("/:id", handleGetOneUser);
+router.get("/users/:id", handleGetOneUser);
 
 // Create A new user
-router.post("/", handleCreateUser);
+router.post("/users", handleCreateUser);
 
 
 // Update a user
-router.put("/:id", handleUpdateUser);
+router.put("/users/:id", handleUpdateUser);
 
 
 // Delete a user 
 
-router.delete("/:id", handleDeleteUser);
+router.delete("/users/:id", handleDeleteUser);
 
 export default router

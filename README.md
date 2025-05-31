@@ -65,7 +65,7 @@ This project is a simple Express.js REST API that connects to a PostgreSQL datab
    Modify the database config in your code (or use environment variables):
 
    ```js
-   const pool = new Pool({
+   const connection = new Client({
      user: "your_db_user",
      host: "localhost",
      database: "your_db_name",
@@ -103,7 +103,7 @@ You can use [Postman](https://www.postman.com/) or [cURL](https://curl.se/) to t
 Example using cURL:
 
 ```bash
-curl -X POST http://localhost:3000/users \
+curl -X POST http://localhost:5000/users \
      -H "Content-Type: application/json" \
      -d '{"name": "John Doe", "email": "john@example.com", "age": 30}'
 ```

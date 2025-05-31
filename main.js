@@ -3,7 +3,6 @@ import express from "express"
 import  dotenv  from "dotenv";
 import userRoutes from "./Routes/userRoutes.js";
 import connection from "./config/db.js";
-import router from "./Routes/userRoutes.js";
 
 
 dotenv.config()
@@ -20,7 +19,7 @@ connection.connect().then((err) => {
     console.log("Connected")
 })
 
-app.use("/users", router)
+app.use(userRoutes)
 
 
 app.listen(PORT, () => {
