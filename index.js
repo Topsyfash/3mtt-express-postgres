@@ -1,8 +1,8 @@
 import { Client } from "pg";
 import express from "express"
-import  dotenv  from "dotenv";
-import userRoutes from "./Routes/userRoutes.js";
-import connection from "./config/db.js";
+import dotenv from "dotenv";
+import userRoutes from "./routes/userRoutes.js";
+import connection from "./Config/index.js";
 
 
 dotenv.config()

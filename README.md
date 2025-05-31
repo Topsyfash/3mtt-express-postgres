@@ -77,7 +77,7 @@ This project is a simple Express.js REST API that connects to a PostgreSQL datab
 5. **Start the server**
 
    ```bash
-   node main.js
+   node index.js
    ```
 
    The server will run at: `http://localhost:5000`

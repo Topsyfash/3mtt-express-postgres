@@ -1,6 +1,6 @@
-import connection from "../config/db.js";
+import connection from "../Config/index.js";
 
-const handleGetUsers = async(req, res) => {
+const handleGetUsers = async (req, res) => {
     try {
         const result = await connection.query("SELECT * FROM users");
 
@@ -13,7 +13,7 @@ const handleGetUsers = async(req, res) => {
         console.error("Error fetching users:", error);
         res.status(500).send("Internal Server Error");
     }
-     
+
 }
 
 const handleGetOneUser = async (req, res) => {
@@ -46,7 +46,7 @@ const handleCreateUser = async (req, res) => {
     }
 }
 
-const handleUpdateUser =async (req, res) => {
+const handleUpdateUser = async (req, res) => {
     const { id } = req.params;
     const { name, email, age } = req.body;
     try {
@@ -78,4 +78,4 @@ const handleDeleteUser = async (req, res) => {
         res.status(500).send(err.message);
     }
 }
-export {handleGetUsers,handleGetOneUser,handleCreateUser,handleUpdateUser,handleDeleteUser}
+export { handleGetUsers, handleGetOneUser, handleCreateUser, handleUpdateUser, handleDeleteUser }
