@@ -1,8 +1,8 @@
-import connection from "../config/index.js";
+import pool from "../config/index.js";
 
 const handleGetUsers = async (req, res) => {
     try {
-        const result = await connection.query("SELECT * FROM users");
+        const result = await pool.query("SELECT * FROM users");
 
         if (result.rowCount === 0) {
             return res.status(404).send("No users found");
@@ -19,7 +19,7 @@ const handleGetUsers = async (req, res) => {
 const handleGetOneUser = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await connection.query("SELECT * FROM users WHERE id = $1", [id]);
+        const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
         if (result.rowCount === 0) {
             return res.status(404).send("User not found");
         }
@@ -33,10 +33,10 @@ const handleCreateUser = async (req, res) => {
     const { name, email, age } = req.body;
 
     try {
-        if (!name || !email | !age) {
+        if (!name || !email || !age) {
             return res.status(400).send("Name,email,age must not be empty")
         }
-        const result = await connection.query(
+        const result = await pool.query(
             "INSERT INTO users (name, email, age) VALUES ($1, $2, $3) RETURNING *",
             [name, email, age]
         );
@@ -53,7 +53,7 @@ const handleUpdateUser = async (req, res) => {
         if (!name || !email | !age) {
             return res.status(400).send("Name,email,age must not be empty")
         }
-        const result = await connection.query(
+        const result = await pool.query(
             "UPDATE users SET name = $1, email = $2, age = $3 WHERE id = $4 RETURNING *",
             [name, email, age, id]
         );
@@ -69,7 +69,7 @@ const handleUpdateUser = async (req, res) => {
 const handleDeleteUser = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await connection.query("DELETE FROM users WHERE id = $1", [id]);
+        const result = await pool.query("DELETE FROM users WHERE id = $1", [id]);
         if (result.rowCount === 0) {
             return res.status(404).send("User not found");
         }
