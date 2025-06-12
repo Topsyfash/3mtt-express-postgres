@@ -1,4 +1,4 @@
-import connection from "../Config/index.js";
+import connection from "../config/index.js";
 
 const handleGetUsers = async (req, res) => {
     try {

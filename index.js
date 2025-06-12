@@ -1,11 +1,11 @@
-import { Client } from "pg";
 import express from "express"
 import dotenv from "dotenv";
-import userRoutes from "./routes/userRoutes.js";
-import connection from "./Config/index.js";
+import routes from "./routes/userRoutes.js";
+import connection from "./config/index.js";
 
 
 dotenv.config()
+
 const app = express()
 
 app.use(express.json())
@@ -19,7 +19,7 @@ connection.connect().then((err) => {
     console.log("Connected")
 })
 
-app.use(userRoutes)
+app.use(routes)
 
 
 app.listen(PORT, () => {
