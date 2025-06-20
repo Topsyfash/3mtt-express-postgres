@@ -6,10 +6,10 @@ This project is a simple Express.js REST API that connects to a PostgreSQL datab
 
 - [Features](#features)
 - [Prerequisites](#prerequisites)
+- [File Structure]
 - [Setup Instructions](#setup-instructions)
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
-- [License](#license)
 
 ---
 
