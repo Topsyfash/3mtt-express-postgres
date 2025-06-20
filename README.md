@@ -84,6 +84,17 @@ This project is a simple Express.js REST API that connects to a PostgreSQL datab
 
 ---
 
+
+## File Structure
+project-root/
+├── index.js # Main application entry point
+├── config/
+│ └── index.js # Database connection setup using pg
+├── routes/
+│ └── userRoutes.js # User-related route definitions
+├── controllers/
+│ └── userController.js # Handler functions for user routes
+---
 ## 📡 API Endpoints
 
 | Method | Endpoint       | Description           |
@@ -107,15 +118,6 @@ curl -X POST http://localhost:5000/users \
      -H "Content-Type: application/json" \
      -d '{"name": "John Doe", "email": "john@example.com", "age": 30}'
 ```
-
----
-
-
-## File Structure
-- `index.js`: Main application entry
-- `config/index.js`: DB connection setup using `pg`
-- `routes/userRoutes.js`: User-related route definitions
-- `controllers/userController.js`: Handler functions for user routes
 
 ---
 ## 📄 License

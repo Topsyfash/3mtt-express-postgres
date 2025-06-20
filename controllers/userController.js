@@ -13,7 +13,6 @@ const handleGetUsers = async (req, res) => {
         console.error("Error fetching users:", error);
         res.status(500).send("Internal Server Error");
     }
-
 }
 
 const handleGetOneUser = async (req, res) => {
