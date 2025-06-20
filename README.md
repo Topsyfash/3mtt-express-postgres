@@ -118,8 +118,3 @@ curl -X POST http://localhost:5000/users \
      -H "Content-Type: application/json" \
      -d '{"name": "John Doe", "email": "john@example.com", "age": 30}'
 ```
-
----
-## 📄 License
-
-This project is licensed under the MIT License.
