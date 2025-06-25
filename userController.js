@@ -1,4 +1,4 @@
-import pool from "../config/index.js";
+import pool from "./db.js";
 
 const handleGetUsers = async (req, res) => {
     try {

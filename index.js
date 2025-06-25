@@ -1,7 +1,7 @@
 import express from "express"
 import dotenv from "dotenv";
-import routes from "./routes/userRoutes.js";
-import pool from "./config/index.js";
+import routes from "./userRoutes.js";
+import pool from "./db.js";
 
 
 dotenv.config()

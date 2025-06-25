@@ -65,7 +65,7 @@ This project is a simple Express.js REST API that connects to a PostgreSQL datab
    Modify the database config in your code (or use environment variables):
 
    ```js
-   const connection = new Client({
+   const connection = new pool({
      user: "your_db_user",
      host: "localhost",
      database: "your_db_name",
@@ -84,17 +84,6 @@ This project is a simple Express.js REST API that connects to a PostgreSQL datab
 
 ---
 
-
-## File Structure
-project-root/
-├── index.js # Main application entry point
-├── config/
-│ └── index.js # Database connection setup using pg
-├── routes/
-│ └── userRoutes.js # User-related route definitions
-├── controllers/
-│ └── userController.js # Handler functions for user routes
----
 ## 📡 API Endpoints
 
 | Method | Endpoint       | Description           |
